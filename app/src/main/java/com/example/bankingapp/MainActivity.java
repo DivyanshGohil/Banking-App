@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
-        bankImage = (ImageView) findViewById(R.id.banklogo);
+        bankImage = (ImageView) findViewById(R.id.bank);
         name      = (TextView) findViewById(R.id.name);
         by        = (TextView) findViewById(R.id.createdBy);
 

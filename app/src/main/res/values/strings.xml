@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Banking App</string>
+    <string name="home">Welcome to Banking App</string>
+    <string name="user">Press the below button to view all User</string>
 </resources>
