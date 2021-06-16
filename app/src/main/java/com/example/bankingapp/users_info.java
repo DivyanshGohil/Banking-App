@@ -55,6 +55,8 @@ public class users_info extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(users_info.this,SelectUser.class);
                 intent.putExtra("account_no",acc_txt);
+                intent.putExtra("name",name_txt);
+                intent.putExtra("amount",amt_txt);
                 startActivity(intent);
             }
         });

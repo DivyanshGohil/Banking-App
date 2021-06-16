@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankingApp">
-        <activity android:name=".SelectUser"></activity>
+        <activity android:name=".tranfer"></activity>
+        <activity android:name=".SelectUser" />
         <activity android:name=".users_info" />
         <activity android:name=".users" />
         <activity android:name=".HomeScreen" />

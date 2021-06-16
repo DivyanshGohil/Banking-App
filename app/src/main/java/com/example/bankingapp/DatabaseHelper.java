@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -22,8 +23,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_col5 = "phone";
     public static final String USER_col6 = "amount";
 
-    public static final String TRANFER_col1 = "to_name";
-    public static final String TRANFER_col2 = "t_amount";
+    public static final String TRANFER_col1 = "from_name";
+    public static final String TRANFER_col2 = "to_name";
+    public static final String TRANFER_col3 = "t_amount";
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -60,13 +62,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(USER_col5,phone);
         contentValues.put(USER_col6,amount);
 
-
-
        long result = db.insert(USER_TABLE_NAME,null,contentValues);
        if(result == -1)
            return false;
        else
            return true;
+    }
+
+    public boolean insertData_tranfer (String sender,String receiver, String amt){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(TRANFER_col1,sender);
+        contentValues.put(TRANFER_col2,receiver);
+        contentValues.put(TRANFER_col3,amt);
+
+
+        long result = db.insert(TRANFER_TABLE_NAME,null,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
     }
 
     public Cursor readalldata()
@@ -92,6 +108,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query,null);
         }
         return  cursor;
+    }
+
+    public boolean UpdateValues(String sender_acc, String amt){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(USER_col1,sender_acc);
+        contentValues.put(USER_col6,amt);
+        db.update("user_table",contentValues,"account_no=?",new String[]{amt});
+        return true;
     }
 
 
