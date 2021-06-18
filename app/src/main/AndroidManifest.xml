@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bankingapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankingApp">
-        <activity android:name=".tranfer"></activity>
+        <activity android:name=".tranfer" />
         <activity android:name=".SelectUser" />
         <activity android:name=".users_info" />
         <activity android:name=".users" />
@@ -23,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".tranfer"
+            tools:ignore="DuplicateActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

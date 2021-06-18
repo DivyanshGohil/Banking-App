@@ -68,12 +68,18 @@ public class tranfer extends AppCompatActivity {
                 }else{
                     int amt_result1 =amount_int - amt_int;
                     int amt_result2 = r_amount_int + amt_int;
-                    String amt_result_str1 = String.valueOf(amt_result1);
-                    String amt_result_str2 = String.valueOf(amt_result2);
-                    boolean result1 = myDB.UpdateValues(sender_acc_str,amt_result_str1);
-                    boolean result2 = myDB.UpdateValues(receiver_acc_str,amt_result_str2);
+                    //String amt_result_str1 = String.valueOf(amt_result1);
+                    //String amt_result_str2 = String.valueOf(amt_result2);
+                    boolean result1 = myDB.UpdateValues(sender_acc_str,amt_result1);
+                    boolean result2 = myDB.UpdateValues(receiver_acc_str,amt_result2);
                     if(result1 && result2){
                         Toast.makeText(tranfer.this,"DATABASE UPDATED",Toast.LENGTH_SHORT).show();
+                        boolean result = myDB.insertdata_tranfer(sender_str, receiver_str, amt);
+                        if(result){
+                            Toast.makeText(tranfer.this,"Transaction Added to Tranfer Table",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(tranfer.this,"Error in Transaction Adding to Tranfer Table",Toast.LENGTH_SHORT).show();
+                        }
                     }else {
                         Toast.makeText(tranfer.this, "SOME ERROR", Toast.LENGTH_SHORT).show();
                     }

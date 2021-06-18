@@ -31,7 +31,7 @@ public class HomeScreen extends AppCompatActivity {
         userbtn = (Button) findViewById(R.id.user_button);
 
         text1.startAnimation(blink_anim);
-        text2.startAnimation(blink_anim);
+        //text2.startAnimation(blink_anim);
 
         myDb  = new DatabaseHelper(this);
         //Insert values

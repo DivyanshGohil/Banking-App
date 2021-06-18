@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tranfer">
+    tools:context=".tranfer"
+    android:background="#C0C0C0">
 
     <TextView
         android:id="@+id/textView4"
@@ -14,6 +15,7 @@
         android:fontFamily="sans-serif-black"
         android:text="RECIEVER:"
         android:textSize="20sp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +29,7 @@
         android:fontFamily="sans-serif-black"
         android:text="AMOUNT:"
         android:textSize="20sp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +42,7 @@
         android:layout_marginTop="56dp"
         android:text="SENDER:"
         android:textSize="20sp"
+        android:textColor="#000"
         android:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
@@ -52,6 +56,7 @@
         android:layout_marginTop="60dp"
         android:text="sender name"
         android:textSize="18sp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -64,6 +69,7 @@
         android:layout_marginTop="116dp"
         android:text="reciever name"
         android:textSize="18sp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -76,6 +82,7 @@
         android:layout_marginTop="172dp"
         android:inputType="number"
         android:textSize="20sp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.643"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -83,13 +90,32 @@
 
     <Button
         android:id="@+id/pay_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="121dp"
+        android:layout_height="62dp"
         android:layout_marginBottom="352dp"
         android:text="PAY"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="514dp"
+        android:text="₹"
+        android:textColor="#000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/user_amt"
+        app:layout_constraintTop_toBottomOf="@+id/reciever_txt"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,23 +68,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        else
            return true;
     }
-
-    public boolean insertData_tranfer (String sender,String receiver, String amt){
-
+    public boolean insertdata_tranfer(String sender, String receiver, String amount){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(TRANFER_col1,sender);
         contentValues.put(TRANFER_col2,receiver);
-        contentValues.put(TRANFER_col3,amt);
-
+        contentValues.put(TRANFER_col3,amount);
 
         long result = db.insert(TRANFER_TABLE_NAME,null,contentValues);
-        if(result == -1)
-            return false;
-        else
+        if(result == -1){
+            return  false;
+        }else{
             return true;
-    }
+        }
 
+    }
     public Cursor readalldata()
     {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -96,6 +94,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    /*public Cursor InsertTransaction(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = " SELECT * FROM "+TRANFER_TABLE_NAME;
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
+    }*/
 
     Cursor readDataWithoutSelect(String account)
     {
@@ -110,13 +117,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    public boolean UpdateValues(String sender_acc, String amt){
+    public boolean UpdateValues(String sender_acc, int amt){
         SQLiteDatabase db = this.getWritableDatabase();
+        Log.d("my app","updated value: "+amt);
         ContentValues contentValues = new ContentValues();
         contentValues.put(USER_col1,sender_acc);
         contentValues.put(USER_col6,amt);
-        db.update("user_table",contentValues,"account_no=?",new String[]{amt});
-        return true;
+        long result = db.update(USER_TABLE_NAME,contentValues,"account_no=?",new String[]{String.valueOf(sender_acc)});
+        db.close();
+        if(result == -1){
+            return false;
+        }else{
+            return true;
+        }
     }
 
 

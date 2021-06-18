@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectUser"
-    android:background="#C0C0C0">
+    android:background="#C0C0C0"
+    >
 
 
     <TextView
@@ -26,7 +27,9 @@
         tools:layout_editor_absoluteX="167dp"
         tools:layout_editor_absoluteY="203dp"
         android:layout_below="@id/users"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
 
 
 </RelativeLayout>
